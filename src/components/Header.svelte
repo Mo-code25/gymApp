@@ -14,6 +14,9 @@
         <button class="md:hidden grid place-items-center">
             <i class="fa-solid fa-bars"></i>
         </button>
+        <button class="md:hidden grid place-items-center">
+            <i class="fa-solid fa-bars"></i>
+        </button>
         <nav class="hidden md:flex items-center gap-4 lg:gap-6"></nav>
         <a>Product</a>
         <a>Reviews</a>
