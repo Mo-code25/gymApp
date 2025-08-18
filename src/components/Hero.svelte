@@ -5,5 +5,5 @@
 
 <SectionWrapper>
     <Header />
-    bla bla bla
+    <!-- bla bla bla -->
 </SectionWrapper>
