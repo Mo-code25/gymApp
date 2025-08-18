@@ -11,15 +11,18 @@
                 <span class="text-indigo-400"> Moley </span>
             </h1>
         </a>
-        <button class="md:hidden grid place-items-center">
+
+        <button class="md:hidden grid place-items-center ml-auto">
             <i class="fa-solid fa-bars"></i>
         </button>
-        <nav class="hidden md:flex items-center gap-4 lg:gap-6"></nav>
-        <a>Product</a>
-        <a>Reviews</a>
-        <a>FAQs</a>
-        <button class="specialBtn">
-            <p>Satrt free today</p>
-        </button>
+
+        <nav class="hidden md:flex items-center gap-4 lg:gap-6 ml-auto">
+            <a>Product</a>
+            <a>Reviews</a>
+            <a>FAQs</a>
+            <button class="specialBtn">
+                <p>Satrt free today</p>
+            </button>
+        </nav>
     </div>
 </header>
