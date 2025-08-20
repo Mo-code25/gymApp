@@ -1,5 +1,6 @@
 <script>
     import SectionWrapper from "./SectionWrapper.svelte";
+    import ProductCard from "./ProductCard.svelte"
     let productFeatures = [
         {
             featureList: [
@@ -9,18 +10,18 @@
             ],
             description:
                 "Swoley moley ensures all users have the information they need to train safely and train effectively",
-            imageUrl: [],
+            imageUrl: "assets/selection.png",
         },
         {
             featureList: [
                 "Select your preferences",
                 "Personalize your workouts",
-                "Customize your training",
+                "Customize your training", 
                 "Gurantees progress on all your exercises",
             ],
             description:
                 "Build you streaks and see your progress with your amazing tracking and analytics features",
-            imageUrl: [],
+            imageUrl: "assets/training.png",
         },
         {
             featureList: [
@@ -32,7 +33,7 @@
             ],
             description:
                 "Enter as much information about yourself as you desire to ensure all workouts are personalizes to your every need",
-            imageUrl: [],
+            imageUrl: "assets/goal.png",
         },
     ];
 </script>
@@ -54,7 +55,7 @@
             </h3>
         </div>
         {#each productFeatures as productFeature, index}
-            <productCard {productFeature} {index}>
+            <ProductCard {productFeature} {index}>
                 {#if index === 0}
                     Experience a beginner exercise <span
                         class="text-indigo-400 font-medium">master</span
@@ -70,7 +71,7 @@
                     and
                     <span class="text-indigo-400 font-medium">expertise</span>
                 {/if}
-            </productCard>
+            </ProductCard>
         {/each}
     </div>
 </SectionWrapper>

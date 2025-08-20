@@ -59,3 +59,7 @@ outline: 4x auto -webkit-focus-ring-color;
     background: #646cff;
     color: white;
 }
+
+.dropShadow{
+    filter: drop-shadow(-10.8932px 14.523px 35.0973px rgba(29, 140, 242, 0.2));
+}
