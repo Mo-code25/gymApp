@@ -50,5 +50,4 @@
     </div>
 
     <p>{reviewItem.review}</p>
-    
 </div>
