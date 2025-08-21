@@ -1,4 +1,5 @@
 <script>
+    import Conversion from "../components/Conversion.svelte";
     import FaQs from "../components/FAQs.svelte";
     import Hero from "../components/Hero.svelte";
     import Product from "../components/Product.svelte";
@@ -18,6 +19,7 @@
     <Product />
     <Reviews />
     <FaQs />
+    <Conversion />
 </main>
 
 <style lang="postcss">
