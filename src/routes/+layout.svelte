@@ -1,10 +1,84 @@
 <script>
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from "$lib/assets/favicon.svg";
+	import { openModal } from "$lib";
 
 	let { children } = $props();
 	import "../app.css";
-	import Footer from '../components/Footer.svelte';
+
+	import Footer from "../components/Footer.svelte";
+	import CtAs from "../components/CTAs.svelte";
+
+	let y;
+	// $: outerHeight = 0;
+	let outerHeight = $state(0);
+
+	function reroute(href) {
+		$openModal = false;
+		window.location.href = href;
+	}
 </script>
+
+{#if $openModal}
+	<div
+		class="fixed top-0 left-0 w-screen h-screen border-b bg-white z-50 flex flex-col gap-8 p-5 px-8 md:hidden"
+	>
+		<div class="flex items-center justify-between gap-4 border-b pb-2">
+			<h1 class="font-semibold">
+				Swoely
+				<span class="text-indigo-400"> Moley </span>
+			</h1>
+
+			<button class="outline-none border-none">
+				<i
+					on:click={() => ($openModal = false)}
+					class="fa-solid fa-xmark text-2xl"
+				></i>
+			</button>
+		</div>
+
+		<div class="flex flex-col gap-4 flex-1">
+			<button
+				on:click={() => reroute("#Product")}
+				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
+			>
+				<p
+					class="duration-200 group-hover:pl-2 poppins text-3xl font-semi-bold"
+				>
+					Product
+					<i class="fa-solid fa-chevron-right text-xl pl-4" />
+				</p>
+			</button>
+
+			<button
+				on:click={() => reroute("#reviews")}
+				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
+			>
+				<p
+					class="duration-200 group-hover:pl-2 poppins text-3xl font-semi-bold"
+				>
+					Reviews
+					<i class="fa-solid fa-chevron-right text-xl pl-4" />
+				</p>
+			</button>
+
+			<button
+				on:click={() => reroute("#faqs")}
+				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
+			>
+				<p
+					class="duration-200 group-hover:pl-2 poppins text-3xl font-semi-bold"
+				>
+					FAQs
+					<i class="fa-solid fa-chevron-right text-xl pl-4" />
+				</p>
+			</button>
+		</div>
+
+		<div class="flex flex-col items-center justify-center">
+			<CtAs />
+		</div>
+	</div>
+{/if}
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
@@ -12,6 +86,5 @@
 
 {@render children?.()}
 
-<Footer/>
-
-
+<Footer />
+<svelte:window bind:scrollY={y} bind:outerHeight />
